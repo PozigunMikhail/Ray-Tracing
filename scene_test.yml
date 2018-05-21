@@ -1,0 +1,73 @@
+# Камера
+camera:
+   position: {x: 10, y: -10, z: 10}
+   orientation: {h: 45, p: -30, r: 0}
+   fov_x: 60
+   fov_y: 60
+   near_clip: 0.4
+# Иерархия сцены
+scene:
+   - node:
+      lcs : {x: 0, y: 0, z: 0, h: 0, p: 0, r: 0, sx: 1, sy: 1, sz: 1}
+      sphere: {r: 1}
+      material:
+         color: {r: 1, g: 0.5, b: 0}
+   - node: # z-axis
+      lcs : {x: 0, y: 0, z: 3, h: 0, p: 0, r: 0, sx: 1, sy: 1, sz: 1}
+      cylinder: {r: 0.4, h: 6}
+      material:
+         color: {r: 1, g: 0, b: 0}
+   - node:
+      lcs : {x: 0, y: 0, z: 6, h: 0, p: 0, r: 0, sx: 1, sy: 1, sz: 1}
+      sphere: {r: 1}
+      material:
+         color: {r: 0, g: 1, b: 1}
+   - node: # y-axis
+      lcs : {x: 0, y: 3, z: 0, h: 0, p: 0, r: -90, sx: 1, sy: 1, sz: 1}
+      cylinder: {r: 0.4, h: 6}
+      material:
+         color: {r: 0, g: 1, b: 0}
+   - node:
+      lcs : {x: 0, y: 6, z: 0, h: 0, p: 0, r: 0, sx: 1, sy: 1, sz: 1}
+      sphere: {r: 1}
+      material:
+         color: {r: 1, g: 0, b: 1}
+   - node: # x-axis
+      lcs : {x: 3, y: 0, z: 0, h: 90, p: -90, r: 0, sx: 1, sy: 1, sz: 1}
+      cylinder: {r: 0.4, h: 6}
+      material:
+         color: {r: 0, g: 0, b: 1}
+   - node:
+      lcs : {x: 6, y: 0, z: 0, h: 0, p: 0, r: 0, sx: 1, sy: 1, sz: 1}
+      sphere: {r: 1}
+      material:
+         color: {r: 1, g: 1, b: 0}
+   - node:
+      lcs: {x: 4, y: 4, z: 4, h: 0, p: -30, r: -10, sx: 3, sy: 3, sz: 3}
+      cone: {r: 1.3, h: 1.8}
+      material:
+        type: REFLECTION_AND_REFRACTION
+        color: {r: 0.7, g: 0.7, b: 0.7}
+        refr_index: 1.33
+   - node:
+      lcs : {x: -6, y: 0, z: 3, h: 0, p: 0, r: 0, sx: 1, sy: 1, sz: 1}
+      sphere: {r: 4}
+      material:
+         type: REFLECTION
+         color: {r: 1, g: 1, b: 0.5}
+         refl_coef: 0.4
+   - node:
+      lcs: {x: -6, y: 2, z: 9, h: 0, p: 0, r: -50, sx: 2, sy: 2, sz: 2}
+      triangle: {x1: -1, y1: 0, z1: 0, x2: 1, y2: 0, z2: 0, x3: 0, y3: 2, z3: 0}
+      material:
+         color: {r: 0.7, g: 0.4, b: 0.7}
+   - node:
+      lcs: {x: 0, y: 0, z: -2, h: 0, p: 0, r: 0, sx: 1, sy: 1, sz: 1}
+      plane: {width: 8, height: 9}
+      material:
+        color: {r: 0.3, g: 0.6, b: 0.8}
+   - light:
+      position: {x: 1, y: 1, z: 8}
+      color: {r: 1.0, g: 1.0, b: 1.0}
+      radius: 13
+      shininess: 7
